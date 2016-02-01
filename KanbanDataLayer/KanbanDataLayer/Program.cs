@@ -15,7 +15,8 @@ namespace KanbanDataLayer
             using (var db = new KanbanEntities())
             {
                 Console.WriteLine("Please choose an option. \n1. Show all data \n 2. Add new list \n 3. Delete all data \n 4. Quit");
-                switch (Console.ReadLine())
+                int switchCase = int.Parse(Console.ReadLine());
+                switch (switchCase)
                 {
                     case 1:
                         foreach (var list in db.Lists)
@@ -38,11 +39,11 @@ namespace KanbanDataLayer
 
                         Console.WriteLine("Please choose an option. \n 1. Enter a new card. \n 2. Quit");
                         string needCard = Console.ReadLine();
-                        if (needCard == '1')
+                        if (needCard == "1")
                         {
                             Console.WriteLine("Enter a new Card: ");
                             string newCardText = Console.ReadLine();
-                            Card newCard = new Card;
+                            Card newCard = new Card();
                             newCard.Text = newCardText;
                             newCard.CreatedDate = DateTime.Now;
                             newList.Cards.Add(newCard);
