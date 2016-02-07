@@ -71,7 +71,7 @@ namespace KanbanDataLayer
                         continue;
                     }
                 }
-            } 
+            }
             Console.ReadKey();
         }
     }
